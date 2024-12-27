@@ -5,6 +5,16 @@
         <title>Long Lam</title>
     </head>
     <body>
+        <script> 
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("navbar").style.top = "0";
+              } else {
+                document.getElementById("navbar").style.top = "-50px";
+              }
+            } 
+        </script>
         <div class="topnav">
             <a class="active" href="#home">Home</a>
             <a href="#news">News</a>
