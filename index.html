@@ -4,25 +4,14 @@
         <link rel="stylesheet" href="styles.css">
         <title>Long Lam</title>
     </head>
+    <div class="navbar">
+        <a class="active" href="#title_block">Home</a>
+        <a href="#About">About</a>
+        <a href="#contact">Contact</a>
+    </div> 
     <body>
-        <script> 
-            window.onscroll = function() {scrollFunction()};
-            function scrollFunction() {
-              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("navbar").style.top = "0";
-              } else {
-                document.getElementById("navbar").style.top = "-50px";
-              }
-            } 
-        </script>
-        <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-        </div> 
         <div class="title_block"><h1>Long Lam</h1></div>
-        <h2>About</h2>
+        <h2 id ="About">About</h2>
             <p>I'm an undergraduate student studying Computer Science at Portland State University. 
             My goal is to be a lifelong learner and to explore all the possibilities the field has to offer. 
             In my journey I hope to be able to contribute to projects/endeavors that helps improve the world we live in one way or another.</p>
@@ -54,5 +43,16 @@
                 </ul>
             </table>
                 </tr>
+
+    <script> 
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "0";
+            } else {
+            document.getElementById("navbar").style.top = "-50px";
+            }
+        } 
+    </script>
     </body>
 </html>
