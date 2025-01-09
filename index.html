@@ -4,18 +4,22 @@
         <link rel="stylesheet" href="styles.css">
         <title>Long Lam</title>
     </head>
-    <div class="navbar">
-        <a class="active" href="#title_block">Home</a>
-        <a href="#About">About</a>
-        <a href="#contact">Contact</a>
-    </div> 
     <body>
+        <div class="main_div">
+        <nav class="navbar">
+            <table>
+                <td><a href="">Home</a></td>
+                <td><a href="">Contact</a></td>
+            </table>
+        </nav>
+        
+        <main>
         <div class="title_block"><h1>Long Lam</h1></div>
+        <div class="right_pane">
         <h2 id ="About">About</h2>
             <p>I'm an undergraduate student studying Computer Science at Portland State University. 
             My goal is to be a lifelong learner and to explore all the possibilities the field has to offer. 
-            In my journey I hope to be able to contribute to projects/endeavors that helps improve the world we live in one way or another.</p>
-            <h2>Skills</h2>     
+            In my journey I hope to be able to contribute to projects/endeavors that helps improve the world we live in one way or another.</p>   
             <table>
         <h3>Languages</h3>
                 <tr>
@@ -26,11 +30,10 @@
                 <td>Java</td>
                 <td>JavaScript</td>
                 </tr>    
-                </ul>
             </table>
             <table>
                 <h3>Technologies</h3>
-                <ul>
+                <tr>
                 <td>Amazon Web Services</td>
                 <td>Google Cloud</td>
                 <td>HTML</td>
@@ -40,19 +43,11 @@
                 <td>Git</td>
                 <td>PostgreSQL</td>
                 <td>Dockerhub</td>
-                </ul>
+                </tr>
             </table>
                 </tr>
-
-    <script> 
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("navbar").style.top = "0";
-            } else {
-            document.getElementById("navbar").style.top = "-50px";
-            }
-        } 
-    </script>
+            </div>
+        </main>
+        </div>
     </body>
 </html>
