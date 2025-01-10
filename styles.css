@@ -3,8 +3,6 @@
     background-color: black;
   }
 
-
-
 .main_div {
     margin-left: auto;
     margin-right: auto;
@@ -126,7 +124,7 @@ p.copyright {
 	width: 100%;
     color: #000000;
     line-height: 40px;
-    font-size: 0.8em;
+    font-size: 0.7em;
 	text-align: center;
 	bottom:0;
 }
