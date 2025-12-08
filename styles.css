@@ -1,12 +1,27 @@
+/* Color variables (use these for theming) */
+:root {
+    --main-width: 800px;     /* .main_div max-width */
+    --sidenav-width: 200px;  /* sidenav width */
+
+    --bg: hsla(223, 24%, 75%, 0.226);
+    --text: rgb(3, 0, 0);
+    --sidenav-bg: rgb(223, 216, 216);
+    --sidenav-text: #000000;
+}
+
+/* Toggle this class on <body> to switch theme */
 .dark-mode {
-    filter: invert(1);
-    background-color: rgb(0, 0, 0);
+    --bg: #000000;
+    --text: #ffffff;
+    --sidenav-bg: rgb(32, 39, 39);
+    --sidenav-text: #ffffff;
 }
 
 .main_div {
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
+    max-width: var(--main-width);
+    width: 100%;
+    padding: 0 16px; /* small horizontal gutters */
+    margin: 0 auto;
 }
 
 .hover-underline-animation {
@@ -23,7 +38,7 @@
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: #000000;
+    background-color: var(--text);
     transition: transform 0.25s ease-out;
     transform-origin: bottom
 }
@@ -40,7 +55,7 @@
     background-size: cover; 
     background-position: center; 
     border-radius: 50%; 
-    transition: 0.6s; 
+    transition: opacity 200ms ease, transform 200ms ease; 
     text-decoration: none; 
     cursor: pointer; 
 }
@@ -55,6 +70,19 @@
     filter: grayscale(100%)
 }
 
+/* In dark mode, invert the icon images so they remain visible against dark backgrounds */
+.dark-mode .github {
+    filter: grayscale(100%) invert(1);
+}
+
+.dark-mode .linkedin {
+    filter: grayscale(100%) invert(1);
+}
+
+.dark-mode .button-modes {
+    filter: grayscale(100%) invert(1);
+}
+
 .button:hover {
     opacity: 0.5;
 }
@@ -67,7 +95,7 @@
     background-size: cover; 
     background-position: center; 
     border-radius: 50%; 
-    transition: 0.6s; 
+    transition: opacity 160ms ease, transform 160ms ease; 
     text-decoration: none; 
     cursor: pointer; 
     border:none;
@@ -90,13 +118,13 @@ hr {
 body {
     font-family: 'Nunito Sans';
     margin: 0;
-    background-color: hsla(223, 24%, 75%, 0.226);
-    color: rgb(3, 0, 0)
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 p {
     font-size: 20px;
-    color:rgb(0, 0, 0)
+    color:var(--text);
 }
 
 
@@ -115,37 +143,68 @@ footer {
 p.copyright {
 	position: absolute;
 	width: 100%;
-    color: #000000;
+    color: var(--text);
     line-height: 40px;
     font-size: 0.7em;
 	text-align: center;
 	bottom:0;
 }
 
+/* Smooth theme transition */
+body,
+.sidenav,
+.main_div,
+.navbar,
+footer {
+  transition:
+    background-color 250ms ease-in-out,
+    color 250ms ease-in-out,
+    border-color 250ms ease-in-out,
+    box-shadow 250ms ease-in-out;
+  will-change: background-color, color;
+}
+
+/* Icons only: short, specific transition for filter if used */
+.github, .linkedin {
+  transition: filter 120ms ease;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .sidenav,
+  .main_div,
+  .navbar,
+  footer,
+  .github, .linkedin {
+    transition: none !important;
+  }
+}
+
 /* Side Navigation Menu */
 .sidenav {
-    background-color: rgb(223, 216, 216);
+    background-color: var(--sidenav-bg);
     height: 100%;
-    width: 550px;
+    width: var(--sidenav-width);
     position: fixed;
-    z-index: 1000; /* Stay on top of page */
-    top: 0;
-    left: 0;
+    z-index: 1; /* Stay on top of page */
+    top: 50%; /* center vertically in viewport */
+    left: calc((100vw - (var(--main-width) + 2 * var(--sidenav-width))) / 4);
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 0; /* reset — we'll center via flexbox */
+    padding-top: 0;
     padding-left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertical center the links */
-    align-items: center; /* keep text left-aligned inside the column */
-    transform: translateY(-315px);
+    justify-content: center; /* vertical center the links inside the container */
+    align-items: center;
+    transform: translateY(-50%); /* center based on its own height */
 }
 
 .sidenav a {
     padding: 8px 16px; /* vertical + horizontal spacing; left padding creates inset from edge */
     text-decoration: none;
     font-size: 20px;
-    color: #000000; /* Default light gray for normal mode */
+    color: var(--sidenav-text); /* color follows theme */
     display: block; /* keep full-width hit area */
 }
 
@@ -182,5 +241,15 @@ p.copyright {
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+/* Responsive adjustments for narrow viewports */
+@media screen and (max-width: 700px) {
+    .sidenav {
+        width: 56px; /* collapse to a narrow rail on mobile */
+        align-items: center; /* center small icons/text */
+    }
+    .sidenav a { padding-left: 8px; padding-right: 8px; text-align: center; }
+    .main_div { padding-left: 12px; padding-right: 12px; }
 }
 
