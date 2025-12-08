@@ -95,7 +95,7 @@
     background-size: cover; 
     background-position: center; 
     border-radius: 50%; 
-    transition: opacity 160ms ease, transform 160ms ease; 
+    transition: 250ms ease-in-out; 
     text-decoration: none; 
     cursor: pointer; 
     border:none;
@@ -166,7 +166,7 @@ footer {
 
 /* Icons only: short, specific transition for filter if used */
 .github, .linkedin {
-  transition: filter 120ms ease;
+  transition: 250ms ease-in-out;
 }
 
 /* Reduced motion support */
