@@ -17,6 +17,19 @@
     --sidenav-text: #ffffff;
 }
 
+/* In dark mode, invert the icon images so they remain visible against dark backgrounds */
+.dark-mode .github {
+    filter: grayscale(100%) invert(1);
+}
+
+.dark-mode .linkedin {
+    filter: grayscale(100%) invert(1);
+}
+
+.dark-mode .button-modes {
+    filter: grayscale(100%) invert(1);
+}
+
 .main_div {
     max-width: var(--main-width);
     width: 100%;
@@ -70,18 +83,7 @@
     filter: grayscale(100%)
 }
 
-/* In dark mode, invert the icon images so they remain visible against dark backgrounds */
-.dark-mode .github {
-    filter: grayscale(100%) invert(1);
-}
 
-.dark-mode .linkedin {
-    filter: grayscale(100%) invert(1);
-}
-
-.dark-mode .button-modes {
-    filter: grayscale(100%) invert(1);
-}
 
 .button:hover {
     opacity: 0.5;
@@ -111,9 +113,6 @@ hr {
     text-align: left;
 }
 
-.navbar a:hover {
-    background-color: hsl(0, 75%, 11%);
-}
 
 body {
     font-family: 'Nunito Sans';
@@ -181,75 +180,45 @@ footer {
   }
 }
 
-/* Side Navigation Menu */
-.sidenav {
-    background-color: var(--sidenav-bg);
-    height: 100%;
-    width: var(--sidenav-width);
-    position: fixed;
-    z-index: 1; /* Stay on top of page */
-    top: 50%; /* center vertically in viewport */
-    left: calc((100vw - (var(--main-width) + 2 * var(--sidenav-width))) / 4);
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 0;
-    padding-left: 0;
+/* Top Navigation Menu */
+.navbar {
+    background: transparent;
+}
+
+.navbar .nav-inner {
+    max-width: var(--main-width);
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertical center the links inside the container */
     align-items: center;
-    transform: translateY(-50%); /* center based on its own height */
+    justify-content: space-between;
+    padding: 8px 16px;
 }
 
-.sidenav a {
-    padding: 8px 16px; /* vertical + horizontal spacing; left padding creates inset from edge */
+.navbar .brand {
+    font-size: 35px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 18px;
     text-decoration: none;
-    font-size: 20px;
-    color: var(--sidenav-text); /* color follows theme */
-    display: block; /* keep full-width hit area */
+    color: inherit;
+    font-size: 18px;
+    display: inline-block;
 }
 
-/* Prevent the global block pseudo-element from spanning the full anchor in the sidenav */
-.sidenav a.hover-underline-animation::after {
-  display: none;
+.nav-links .button-modes {
+    margin-left: 12px;
 }
 
-/* The inline text wrapper: shrink to text width and host the underline */
-.sidenav a .link-text {
-  position: relative;
-  display: inline-block; /* shrink to the text width */
-}
-
-/* Underline sized to the text */
-.sidenav a .link-text::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;            /* tweak vertical offset if needed */
-  width: 100%;
-  height: 3px;            /* underline thickness */
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: bottom;
-  transition: transform 0.25s ease-out;
-}
-
-/* Hover state */
-.sidenav a:hover .link-text::after {
-  transform: scaleX(1);
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-
-/* Responsive adjustments for narrow viewports */
 @media screen and (max-width: 700px) {
-    .sidenav {
-        width: 56px; /* collapse to a narrow rail on mobile */
-        align-items: center; /* center small icons/text */
-    }
-    .sidenav a { padding-left: 8px; padding-right: 8px; text-align: center; }
-    .main_div { padding-left: 12px; padding-right: 12px; }
+    /* Hide text links on small screens to save space; keep the dark mode button */
+    .nav-links a { display: none; }
+    .nav-links .button-modes { margin-left: 0; }
+    .nav-inner { padding-left: 8px; padding-right: 8px; }
 }
 

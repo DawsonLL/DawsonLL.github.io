@@ -15,31 +15,37 @@
     <body>
         <div class="main_div">
         <nav class="navbar">
-            <table>
-                <td style="font-size: 35px" class="hover-underline-animation">
+            <div class="nav-inner">
+                <div class="brand hover-underline-animation">
                     <a href="https://dawsonll.github.io/" style="text-decoration: none; color: inherit; background-color: transparent;" onmouseover="this.style.backgroundColor='transparent';" onmouseout="this.style.backgroundColor='transparent';"><b>LL</b></a>
-                </td>
-                <td align="right">
+                </div>
+                <div class="nav-links">
+                    <a href="#about" class="hover-underline-animation">About</a>
+                    <a href="#projects" class="hover-underline-animation">Projects</a>
+                    <a href="#contact" class="hover-underline-animation">Contact</a>
                     <button class="button-modes" onclick="darkMode()"></button>
-                </td>
-        </table>
+                </div>
+            </div>
         </nav>
         <hr>
         <main>
-        <h2>About</h2>
+        <h2 id="about">About</h2>
             <p> 
-            Hi! I'm a recent graduate from Portland State University with a Bachelors in Computer Science. 
-            Excited to gain experience and work on more real-world projects! In my free time, I enjoy playing volleyball, tennis, and
-            the occasional gaming session.
+                Hi! I'm a recent graduate from Portland State University with a Bachelors in Computer Science. 
+                Excited to gain experience and work on more real-world projects! In my free time, I enjoy playing volleyball, tennis, and
+                the occasional gaming session.
             <br>
             </br>
-            Currently I am doing contract work, side projects, and applying for full-time positions.
-            Whether it be web development, mobile apps, game development, or anything in between, I am eager to contribute and grow in the field.
-            </p>   
+                Currently I am doing contract work, side projects, and applying for full-time positions.
+                Whether it be web development, mobile apps, game development, or anything in between, I am eager to contribute and grow in the field.
+            </p>
+        <br>
+        </br>
+        <h2 id="projects">Projects</h2>
+        
 
-        <h2>Contact</h2>
+        <h2 id="contact">Contact</h2>
             <p>I'm always open to chatting! Just shoot me a message on Linkedin or email me at long.lam.1254@gmail.com.</p>
-
 
         <footer>
             <table>
@@ -51,11 +57,12 @@
             <p class="copyright">© LONG LAM 2025 • ALL RIGHTS RESERVED</p>
         </footer>
         </main>
+
+
         </div>
-        <div id ="side_nav" class = "sidenav">
-            <a href="#" class="hover-underline-animation"><span class="link-text"><b>About</b></span></a>
-            <a href="#" class="hover-underline-animation"><span class="link-text"><b>Projects</b></span></a>
-            <a href="#" class="hover-underline-animation"><span class="link-text"><b>Contact</b></span></a>            
-        </div>
+
+
+
+
     </body>
 </html>
