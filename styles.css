@@ -9,6 +9,53 @@
     --sidenav-text: #000000;
 }
 
+/* Top Navigation Menu */
+.navbar {
+    background: transparent;
+}
+
+.navbar .nav-inner {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+
+.navbar .brand {
+    font-size: 35px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+    display: flex;
+}
+
+.nav-links a.hover-underline-animation {
+    padding-bottom: 2px;
+}
+
+.nav-links .button-modes {
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 700px) {
+    /* Hide text links on small screens to save space; keep the dark mode button */
+    .nav-links a { display: none; }
+    .nav-links .button-modes { margin-left: 0; }
+    .nav-inner { padding-left: 8px; padding-right: 8px; }
+}
+
 /* Toggle this class on <body> to switch theme */
 .dark-mode {
     --bg: #000000;
@@ -59,7 +106,6 @@
 .hover-underline-animation:hover::after {
     transform: scaleX(1);
 }
-  
 
 .button {
     display: inline-block;
@@ -121,6 +167,15 @@ body {
     color: var(--text);
 }
 
+.profile-pic {
+    height: 150px;
+    width: 150px;
+    float: left;
+    border-radius: 50%;
+    margin-right: 20px;
+    outline: var(--text) solid 1px;
+}
+
 p {
     font-size: 20px;
     color:var(--text);
@@ -180,45 +235,4 @@ footer {
   }
 }
 
-/* Top Navigation Menu */
-.navbar {
-    background: transparent;
-}
-
-.navbar .nav-inner {
-    max-width: var(--main-width);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 16px;
-}
-
-.navbar .brand {
-    font-size: 35px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    margin-left: 18px;
-    text-decoration: none;
-    color: inherit;
-    font-size: 18px;
-    display: inline-block;
-}
-
-.nav-links .button-modes {
-    margin-left: 12px;
-}
-
-@media screen and (max-width: 700px) {
-    /* Hide text links on small screens to save space; keep the dark mode button */
-    .nav-links a { display: none; }
-    .nav-links .button-modes { margin-left: 0; }
-    .nav-inner { padding-left: 8px; padding-right: 8px; }
-}
 
