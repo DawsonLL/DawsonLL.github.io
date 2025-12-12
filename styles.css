@@ -231,3 +231,8 @@ footer {
     transition: none !important;
   }
 }
+
+footer {
+    margin-top: auto;
+    text-align: center;
+}
