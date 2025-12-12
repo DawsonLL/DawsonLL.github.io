@@ -1,8 +1,6 @@
 /* Color variables (use these for theming) */
 :root {
-    --main-width: 800px;     /* .main_div max-width */
-    --sidenav-width: 200px;  /* sidenav width */
-
+    --main-width: 600px;     /* .main_div max-width */
     --bg: hsla(223, 24%, 75%, 0.226);
     --text: rgb(3, 0, 0);
     --sidenav-bg: rgb(223, 216, 216);
@@ -80,7 +78,6 @@
 .main_div {
     max-width: var(--main-width);
     width: 100%;
-    padding: 0 16px; /* small horizontal gutters */
     margin: 0 auto;
     flex-grow: 1;
 }
@@ -110,14 +107,15 @@
 
 .button {
     display: inline-block;
-    width: 40px;
-    height: 40px; 
+    width: 25px;
+    height: 25px; 
     background-size: cover; 
     background-position: center; 
     border-radius: 50%; 
     transition: opacity 200ms ease, transform 200ms ease; 
     text-decoration: none; 
     cursor: pointer; 
+    margin: 5px;
 }
 
 .github {
@@ -162,6 +160,7 @@ body {
     font-family: 'Nunito Sans';
     background-color: var(--bg);
     color: var(--text);
+    margin: 0;
 }
 
 main {
@@ -169,11 +168,13 @@ main {
 }
 
 .profile-pic {
-    height: 150px;
-    width: 150px;
-    float: left;
+    display: block;
+    height: 175px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
     border-radius: 50%;
-    margin-right: 20px;
     outline: var(--text) solid 1px;
 }
 
@@ -223,6 +224,14 @@ p.copyright {
 * {
     transition: none !important;
   }
+}
+
+.social-links {
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 45px; /* sits 5px above the footer */
 }
 
 footer {
