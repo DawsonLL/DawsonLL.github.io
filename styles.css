@@ -202,17 +202,17 @@ p.copyright {
 }
 
 /* Smooth theme transition */
-body,
-.sidenav,
-.main_div,
-.navbar,
-footer {
+* {
   transition:
     background-color 250ms ease-in-out,
     color 250ms ease-in-out,
     border-color 250ms ease-in-out,
     box-shadow 250ms ease-in-out;
   will-change: background-color, color;
+}
+
+.no-transition * {
+    transition: none !important;
 }
 
 /* Icons only: short, specific transition for filter if used */
@@ -222,12 +222,7 @@ footer {
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  body,
-  .sidenav,
-  .main_div,
-  .navbar,
-  footer,
-  .github, .linkedin {
+* {
     transition: none !important;
   }
 }
