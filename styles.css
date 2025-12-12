@@ -82,6 +82,7 @@
     width: 100%;
     padding: 0 16px; /* small horizontal gutters */
     margin: 0 auto;
+    flex-grow: 1;
 }
 
 .hover-underline-animation {
@@ -159,12 +160,14 @@ hr {
     text-align: left;
 }
 
-
 body {
     font-family: 'Nunito Sans';
-    margin: 0;
     background-color: var(--bg);
     color: var(--text);
+}
+
+main {
+    flex-grow: 1;
 }
 
 .profile-pic {
@@ -181,18 +184,12 @@ p {
     color:var(--text);
 }
 
-
 table {
     width: 100%;
     table-layout: fixed;
     flex-wrap: wrap;
 }
 
-footer {
-	position: relative;
-	height: 300px;
-    width: 100%;
-}
 
 p.copyright {
 	position: absolute;
@@ -234,5 +231,3 @@ footer {
     transition: none !important;
   }
 }
-
-
