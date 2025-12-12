@@ -217,7 +217,7 @@ p.copyright {
 
 /* Icons only: short, specific transition for filter if used */
 .github, .linkedin {
-  transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out; 
 }
 
 /* Reduced motion support */
