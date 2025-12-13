@@ -8,6 +8,13 @@
     --footer-bg: hsl(0, 0%, 95%);
 }
 
+/*  Timeline bar */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* Top Navigation Menu */
 .navbar {
     background: transparent;
@@ -223,7 +230,6 @@ p.copyright {
     transition: none !important;
 }
 
-/* Icons only: short, specific transition for filter if used */
 .github, .linkedin {
   transition: 250ms ease-in-out; 
 }
@@ -246,7 +252,6 @@ p.copyright {
     width: var(--main-width);
     text-align: center;
     z-index: 1001;
-    padding-top: 12px;
 }
 
 
