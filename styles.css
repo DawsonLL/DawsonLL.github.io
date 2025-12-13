@@ -1,10 +1,11 @@
 /* Color variables (use these for theming) */
 :root {
     --main-width: 600px;     /* .main_div max-width */
-    --bg: hsla(223, 24%, 75%, 0.226);
+    --bg: hsl(0, 0%, 95%);
     --text: rgb(3, 0, 0);
     --sidenav-bg: rgb(223, 216, 216);
     --sidenav-text: #000000;
+    --footer-bg: hsl(0, 0%, 95%);
 }
 
 /* Top Navigation Menu */
@@ -60,6 +61,7 @@
     --text: #ffffff;
     --sidenav-bg: rgb(32, 39, 39);
     --sidenav-text: #ffffff;
+    --footer-bg: black;
 }
 
 /* In dark mode, invert the icon images so they remain visible against dark backgrounds */
@@ -75,11 +77,17 @@
     filter: grayscale(100%) invert(1);
 }
 
+.dark-mode .button-modes {
+    background-image: url('https://img.icons8.com/ios-filled/452/moon-symbol.png');
+    transform: rotate(210deg);
+}
+
 .main_div {
     max-width: var(--main-width);
     width: 100%;
     margin: 0 auto;
     flex-grow: 1;
+    margin-bottom: 50px;
 }
 
 .hover-underline-animation {
@@ -192,10 +200,10 @@ table {
 
 
 p.copyright {
-	position: absolute;
+	position: fixed;
 	width: 100%;
     color: var(--text);
-    line-height: 40px;
+    line-height: 45px;
     font-size: 0.7em;
 	text-align: center;
 	bottom:0;
@@ -228,18 +236,37 @@ p.copyright {
 }
 
 .social-links {
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 45px; /* sits 5px above the footer */
+    bottom: 45px;
+
+    background-color: var(--footer-bg); /* optional but recommended */
+    border-radius: 0;
+    width: var(--main-width);
+    text-align: center;
+    z-index: 1001;
+    padding-top: 12px;
 }
 
+
 .social-links .button {
+    margin-top: auto;
     height: 25px;
     width: 25px;
 }
 
-footer {
-    margin-top: auto;
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: var(--main-width);
+    height: 45px;
+
+    background-color: var(--footer-bg);
+    z-index: 1000;
+
     text-align: center;
 }
