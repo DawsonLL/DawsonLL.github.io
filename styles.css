@@ -1,6 +1,7 @@
 /* Color variables (use these for theming) */
 :root {
-    --main-width: 600px;     /* .main_div max-width */
+    --main-width: 600px;
+    /* .main_div max-width */
     --bg: hsl(0, 0%, 95%);
     --text: rgb(3, 0, 0);
     --sidenav-bg: rgb(223, 216, 216);
@@ -8,11 +9,75 @@
     --footer-bg: hsl(0, 0%, 95%);
 }
 
-/*  Timeline bar */
+* {
+    box-sizing: border-box;
+}
+
+/* Set a background color */
+body {
+    background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
 .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--text);
+    top: 0;
+    bottom: 0;
+    left: 3%;
+}
+
+/* Container around content */
+.container {
+    padding: 10px 0px 40px 45px; /* top right bottom left */
+    position: relative;
+    background-color: inherit;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--bg);
+    border: 3px solid var(--text);
+    top: 40%;
+    border-radius: 50%;
+    z-index: 1;
+    left: 1.7%;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* The actual content */
+.content {
+    padding: 15px 15px;
+    position: relative;
+    border-radius: 5px;
+    border: 4px double var(--text);
+}
+
+.content h3 {
+    text-align: center;
+}
+
+.content p {
+    text-align: center;
+    font-size: 16px;
 }
 
 /* Top Navigation Menu */
@@ -56,10 +121,46 @@
 }
 
 @media screen and (max-width: 700px) {
+
     /* Hide text links on small screens to save space; keep the dark mode button */
-    .nav-links a { display: none; }
-    .nav-links .button-modes { margin-left: 0; }
-    .nav-inner { padding-left: 8px; padding-right: 8px; }
+    .nav-links a {
+        display: none;
+    }
+
+    .nav-links .button-modes {
+        margin-left: 0;
+    }
+
+    .nav-inner {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    .left::after,
+    .right::after {
+        left: 15px;
+    }
+
+    .right {
+        left: 0%;
+    }
 }
 
 /* Toggle this class on <body> to switch theme */
@@ -101,8 +202,8 @@
     cursor: pointer;
     display: inline-block;
     position: relative;
-  }
-  
+}
+
 .hover-underline-animation::after {
     content: '';
     position: absolute;
@@ -113,7 +214,7 @@
     left: 0;
     background-color: var(--text);
     transition: transform 0.25s ease-out;
-    transform-origin: bottom
+    transform-origin: bottom;
 }
 
 .hover-underline-animation:hover::after {
@@ -123,23 +224,25 @@
 .button {
     display: inline-block;
     width: 25px;
-    height: 25px; 
-    background-size: cover; 
-    background-position: center; 
-    border-radius: 50%; 
-    transition: opacity 200ms ease, transform 200ms ease; 
-    text-decoration: none; 
-    cursor: pointer; 
+    height: 25px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    transition: opacity 200ms ease, transform 200ms ease;
+    text-decoration: none;
+    cursor: pointer;
     margin: 5px;
 }
 
 .github {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg'); /* GitHub logo */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg');
+    /* GitHub logo */
     filter: grayscale(100%)
 }
 
 .linkedin {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/Font_Awesome_5_brands_linkedin.svg'); /* LinkedIn logo */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/Font_Awesome_5_brands_linkedin.svg');
+    /* LinkedIn logo */
     filter: grayscale(100%)
 }
 
@@ -150,14 +253,14 @@
 .button-modes {
     display: inline-block;
     width: 20px;
-    height: 20px; 
+    height: 20px;
     background-image: url('https://img.icons8.com/ios/452/sun.png');
-    background-size: cover; 
-    background-position: center; 
-    border-radius: 50%; 
-    transition: 250ms ease-in-out; 
-    text-decoration: none; 
-    cursor: pointer; 
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    transition: 250ms ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
     border: none;
     outline: none;
 }
@@ -196,7 +299,7 @@ main {
 
 p {
     font-size: 20px;
-    color:var(--text);
+    color: var(--text);
 }
 
 table {
@@ -207,38 +310,39 @@ table {
 
 
 p.copyright {
-	position: fixed;
-	width: 100%;
+    position: fixed;
+    width: 100%;
     color: var(--text);
     line-height: 45px;
     font-size: 0.7em;
-	text-align: center;
-	bottom:0;
+    text-align: center;
+    bottom: 0;
 }
 
 /* Smooth theme transition */
 * {
-  transition:
-    background-color 250ms ease-in-out,
-    color 250ms ease-in-out,
-    border-color 250ms ease-in-out,
-    box-shadow 250ms ease-in-out;
-  will-change: background-color, color;
+    transition:
+        background-color 250ms ease-in-out,
+        color 250ms ease-in-out,
+        border-color 250ms ease-in-out,
+        box-shadow 250ms ease-in-out;
+    will-change: background-color, color;
 }
 
 .no-transition * {
     transition: none !important;
 }
 
-.github, .linkedin {
-  transition: 250ms ease-in-out; 
+.github,
+.linkedin {
+    transition: 250ms ease-in-out;
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-* {
-    transition: none !important;
-  }
+    * {
+        transition: none !important;
+    }
 }
 
 .social-links {
@@ -247,7 +351,8 @@ p.copyright {
     transform: translateX(-50%);
     bottom: 45px;
 
-    background-color: var(--footer-bg); /* optional but recommended */
+    background-color: var(--footer-bg);
+    /* optional but recommended */
     border-radius: 0;
     width: var(--main-width);
     text-align: center;
