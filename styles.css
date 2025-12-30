@@ -23,7 +23,7 @@ body {
 .timeline {
     position: relative;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -48,14 +48,103 @@ body {
 .container::after {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: var(--bg);
-    border: 3px solid var(--text);
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--text);
     top: 40%;
     border-radius: 50%;
     z-index: 1;
-    left: 1.7%;
+    left: .8%;
+    background-color: var(--bg);
+}
+
+/* Add another pseudo-element for the image */
+.container::before {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 41.3%;
+    left: 1.3%;
+    z-index: 2;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container:nth-child(1)::before {
+    background-image: url('img/location.png');
+    filter: grayscale(100%);
+    top: 41.5%;
+}
+
+.dark-mode .container:nth-child(1)::before {
+    background-image: url('img/location.png');
+    filter: grayscale(100%) invert(1);
+}
+
+.container:nth-child(2)::before {
+    background-image: url('img/cog.png');
+    filter: grayscale(100%);
+    top: 40.8%;
+}
+
+.dark-mode .container:nth-child(2)::before {
+    background-image: url('img/cog.png');
+    filter: grayscale(100%) invert(1);
+    top: 40.8%;
+}
+
+.container:nth-child(3)::before {
+    background-image: url('img/grad cap.png');
+    filter: grayscale(100%);
+}
+
+.dark-mode .container:nth-child(3)::before {
+    background-image: url('img/grad cap.png');
+    filter: grayscale(100%) invert(1);
+}
+
+.container:nth-child(4)::before {
+    background-image: url('img/lightbulb.png');
+    filter: grayscale(100%);
+}
+
+.dark-mode .container:nth-child(4)::before {
+    background-image: url('img/lightbulb.png');
+    filter: grayscale(100%) invert(1);
+}
+
+.container:nth-child(5)::before {
+    background-image: url('img/lightbulb.png');
+    filter: grayscale(100%);
+}
+
+.dark-mode .container:nth-child(5)::before {
+    background-image: url('img/lightbulb.png');
+    filter: grayscale(100%) invert(1);
+}
+
+.container:nth-child(6)::before {
+    background-image: url('img/lightbulb.png');
+    filter: grayscale(100%);
+}
+
+.dark-mode .container:nth-child(6)::before {
+    background-image: url('img/lightbulb.png');
+    filter: grayscale(100%) invert(1);
+}
+
+.container:nth-child(7)::before {
+    background-image: url('img/plant.png');
+    filter: grayscale(100%);
+    top: 42%;
+}
+
+.dark-mode .container:nth-child(7)::before {
+    background-image: url('img/plant.png');
+    filter: grayscale(100%) invert(1);
+    top: 42%;
 }
 
 /* Place the container to the left */
@@ -173,6 +262,7 @@ body {
 }
 
 /* In dark mode, invert the icon images so they remain visible against dark backgrounds */
+
 .dark-mode .github {
     filter: grayscale(100%) invert(1);
 }
@@ -190,12 +280,14 @@ body {
     transform: rotate(210deg);
 }
 
+
 .main_div {
     max-width: var(--main-width);
     width: 100%;
     margin: 0 auto;
     flex-grow: 1;
     margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .hover-underline-animation {
@@ -359,7 +451,6 @@ p.copyright {
     z-index: 1001;
 }
 
-
 .social-links .button {
     margin-top: auto;
     height: 25px;
@@ -371,7 +462,6 @@ p.copyright {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-
     width: var(--main-width);
     height: 45px;
 
