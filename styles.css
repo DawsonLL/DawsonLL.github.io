@@ -7,6 +7,7 @@
     --sidenav-bg: rgb(223, 216, 216);
     --sidenav-text: #000000;
     --footer-bg: hsl(0, 0%, 95%);
+    --timeline-hover: rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -39,11 +40,10 @@ body {
 
 /* Container around content */
 .container {
-    padding: 10px 0px 40px 45px; /* top right bottom left */
+    padding: 10px 20px 40px 45px; /* top right bottom left */
     position: relative;
     background-color: inherit;
 }
-
 /* The circles on the timeline */
 .container::after {
     content: '';
@@ -158,6 +158,14 @@ body {
     position: relative;
     border-radius: 5px;
     border: 4px double var(--text);
+    transition: 
+     transform 0.25s ease,
+     box-shadow 0.25s ease;
+}
+
+.content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--timeline-hover);
 }
 
 .content h3 {
@@ -254,6 +262,7 @@ body {
     --sidenav-bg: rgb(32, 39, 39);
     --sidenav-text: #ffffff;
     --footer-bg: black;
+    --timeline-hover: rgba(255, 255, 255, 0.623);
 }
 
 /* In dark mode, invert the icon images so they remain visible against dark backgrounds */
@@ -381,7 +390,13 @@ main {
     margin-bottom: 20px;
     border-radius: 50%;
     outline: var(--text) solid 2px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.profile-pic:hover {
+    box-shadow: 0 8px 20px var(--timeline-hover);
 }
 
 p {
