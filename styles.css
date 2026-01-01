@@ -118,11 +118,13 @@ body {
 .container:nth-child(5)::before {
     background-image: url('img/lightbulb.png');
     filter: grayscale(100%);
+    top: 41.1%;
 }
 
 .dark-mode .container:nth-child(5)::before {
     background-image: url('img/lightbulb.png');
     filter: grayscale(100%) invert(1);
+    top: 41.1%;
 }
 
 .container:nth-child(6)::before {
