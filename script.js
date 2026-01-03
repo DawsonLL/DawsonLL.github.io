@@ -3,6 +3,9 @@ document.documentElement.classList.add("no-transition");
 
 // On page load, checks for saved theme preferences and applies it
 document.addEventListener("DOMContentLoaded", () => {
+    /* 
+                Theme Initialization
+                                                */
     const savedMode = localStorage.getItem("theme");
 
     if (savedMode === "dark") {
@@ -12,10 +15,41 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         document.documentElement.classList.remove("no-transition");
     }, 5);
+
+    const form = document.getElementById("contact-form");
+    const form_status = document.getElementById("form_status");
+
+    /* 
+            Contact Form Handling
+                                        */
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Prevent page redirect
+
+            const data = new FormData(form);
+            
+            try {
+                const response = await fetch("https://formspree.io/f/xlgdbrbk", {
+                    method: "POST",
+                    body: data,
+                    headers: { "Accept": "application/json" }
+                });
+
+                if (response.ok) {
+                    form_status.textContent = "Message sent!";
+                    form.reset();
+                } else {
+                    form_status.textContent = "Oops! There was a problem sending the message.";
+                }
+            } catch (error) {
+                form_status.textContent = "Network error.";
+            }
+        });
+    }
 });
 
 // Toggles dark mode and saves preference to localStorage
-function darkMode() {
+darkMode = () => {
     document.body.classList.toggle("dark-mode");
     if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("theme", "dark");
@@ -39,9 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch("https://formspree.io/f/xlgdbrbk", {
                 method: "POST",
                 body: data,
-                headers: {
-                    "Accept": "application/json"
-                }
+                headers: { "Accept": "application/json" }
             });
 
             if (response.ok) {
