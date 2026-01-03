@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Mobile compatibility coming soon
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        -->
         <link rel="stylesheet" href="styles.css">
         
         <!--Javascript and JQuery stuff later.-->
@@ -31,18 +33,23 @@
         <hr>
         <main>
             <p>I'm always open to chatting! Just shoot me a message on Linkedin or email me at long.lam.1254@gmail.com.</p>
-            <form action="https://formspree.io/f/xlgdbrbk" method="POST">
+            <form id="contact-form">
                 <label>
-                    Your email:
-                    <input type="email" name="email">
+                    Email:
+                    <br>
+                    <input type="email" name="email" required>
+                    </br>
                 </label>
                 <label>
-                    Your message:
-                    <textarea name="message"></textarea>
+                    Message:
+                    <br>
+                    <textarea name="message" required></textarea>
+                    </br>
                 </label>
-            <!-- your other form fields go here -->
+            <!-- other form fields go here -->
                 <button type="submit">Send</button>
             </form>
+            <p id ="form_status"></p>
         </main>
         </div>
     </body>
