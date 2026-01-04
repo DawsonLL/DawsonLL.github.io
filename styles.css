@@ -482,3 +482,37 @@ p.copyright {
 
     text-align: center;
 }
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contact-form input { /* Email */
+    background-color: var(--bg);
+    color: var(--text);
+    border: 2px solid var(--text);
+    width: 30%;
+}
+#contact-form textarea { /* Message */
+    background-color: var(--bg);
+    color: var(--text);
+    border: 2px solid var(--text);
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#contact-form button {
+    background-color: var(--text);
+    color: var(--bg);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100px;
+    transition: opacity 200ms ease, transform 200ms ease;
+}
+
+#contact-form button:hover {
+    opacity: 0.6;
+}
