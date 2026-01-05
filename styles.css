@@ -35,12 +35,12 @@ body {
     background-color: var(--text);
     top: 0;
     bottom: 0;
-    left: 3%;
+    left: 2.5%;
 }
 
 /* Container around content */
 .container {
-    padding: 10px 20px 40px 45px; /* top right bottom left */
+    padding: 40px 20px 40px 45px; /* top right bottom left */
     position: relative;
     background-color: inherit;
 }
@@ -51,10 +51,10 @@ body {
     width: 25px;
     height: 25px;
     border: 2px solid var(--text);
-    top: 40%;
+    top: 50%;
     border-radius: 50%;
     z-index: 1;
-    left: .8%;
+    left: 0.9%;
     background-color: var(--bg);
 }
 
@@ -62,10 +62,10 @@ body {
 .container::before {
     content: '';
     position: absolute;
-    width: 23px;
-    height: 23px;
-    top: 41.3%;
-    left: 1.3%;
+    width: 21px;
+    height: 21px;
+    top: 51.2%;
+    left: 1.4%;
     z-index: 2;
     background-size: contain;
     background-repeat: no-repeat;
@@ -75,7 +75,6 @@ body {
 .container:nth-child(1)::before {
     background-image: url('img/location.png');
     filter: grayscale(100%);
-    top: 41.5%;
 }
 
 .dark-mode .container:nth-child(1)::before {
@@ -86,13 +85,11 @@ body {
 .container:nth-child(2)::before {
     background-image: url('img/cog.png');
     filter: grayscale(100%);
-    top: 40.8%;
 }
 
 .dark-mode .container:nth-child(2)::before {
     background-image: url('img/cog.png');
     filter: grayscale(100%) invert(1);
-    top: 40.8%;
 }
 
 .container:nth-child(3)::before {
@@ -118,13 +115,11 @@ body {
 .container:nth-child(5)::before {
     background-image: url('img/lightbulb.png');
     filter: grayscale(100%);
-    top: 41.1%;
 }
 
 .dark-mode .container:nth-child(5)::before {
     background-image: url('img/lightbulb.png');
     filter: grayscale(100%) invert(1);
-    top: 41.1%;
 }
 
 .container:nth-child(6)::before {
@@ -140,13 +135,11 @@ body {
 .container:nth-child(7)::before {
     background-image: url('img/plant.png');
     filter: grayscale(100%);
-    top: 42%;
 }
 
 .dark-mode .container:nth-child(7)::before {
     background-image: url('img/plant.png');
     filter: grayscale(100%) invert(1);
-    top: 42%;
 }
 
 /* Place the container to the left */
