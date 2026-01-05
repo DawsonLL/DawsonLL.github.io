@@ -59,31 +59,3 @@ darkMode = () => {
         localStorage.setItem("theme", "light");
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contact-form");
-    const form_status = document.getElementById("form_status");
-
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Prevent page redirect
-
-        const data = new FormData(form);
-
-        try {
-            const response = await fetch("https://formspree.io/f/xlgdbrbk", {
-                method: "POST",
-                body: data,
-                headers: { "Accept": "application/json" }
-            });
-
-            if (response.ok) {
-                form_status.textContent = "Message sent!";
-                form.reset();
-            } else {
-                form_status.textContent = "Oops! There was a problem sending the message.";
-            }
-        } catch (error) {
-            form_status.textContent = "Network error.";
-        }
-    });
-});

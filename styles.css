@@ -493,14 +493,16 @@ p.copyright {
     background-color: var(--bg);
     color: var(--text);
     border: 2px solid var(--text);
-    width: 30%;
+    width: 40%;
 }
+
 #contact-form textarea { /* Message */
     background-color: var(--bg);
     color: var(--text);
     border: 2px solid var(--text);
     min-width: 100%;
     max-width: 100%;
+    min-height: 100px;
 }
 
 #contact-form button {
