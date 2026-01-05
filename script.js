@@ -49,6 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    /* 
+            Time Initialization
+                                            */
+    updateTime();
+    setInterval(updateTime, 1000);
 });
 
 // Toggles dark mode and saves preference to localStorage
@@ -61,4 +67,11 @@ darkMode = () => {
     else {
         localStorage.setItem("theme", "light");
     }
+}
+
+updateTime = () => {
+    const now = new Date();
+    const timeElement = document.getElementById("current-time");
+
+    timeElement.innerHTML = now.toLocaleTimeString();
 }
