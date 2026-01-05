@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                                 */
     const savedMode = localStorage.getItem("theme");
 
-    if (savedMode === "dark") {
+    if (savedMode === "light") {
+        document.body.classList.remove("dark-mode");
+    }
+    else {
         document.body.classList.add("dark-mode");
     }
 

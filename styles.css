@@ -2,11 +2,10 @@
 :root {
     --main-width: 800px;
     /* .main_div max-width */
-    --bg: hsl(0, 0%, 95%);
+    --bg: hsla(0, 0%, 95%);
     --text: rgb(3, 0, 0);
     --sidenav-bg: rgb(223, 216, 216);
     --sidenav-text: #000000;
-    --footer-bg: hsl(0, 0%, 95%);
     --timeline-hover: rgba(0, 0, 0, 0.15);
 }
 
@@ -259,7 +258,6 @@ body {
     --text: #ffffff;
     --sidenav-bg: rgb(32, 39, 39);
     --sidenav-text: #ffffff;
-    --footer-bg: black;
     --timeline-hover: rgba(255, 255, 255, 0.623);
 }
 
@@ -451,7 +449,7 @@ p.copyright {
     transform: translateX(-50%);
     bottom: 45px;
 
-    background-color: var(--footer-bg);
+    background-color: var(--bg);
     /* optional but recommended */
     border-radius: 0;
     width: var(--main-width);
@@ -472,7 +470,7 @@ p.copyright {
     transform: translateX(-50%);
     width: var(--main-width);
     height: 45px;
-    background-color: var(--footer-bg);
+    background-color: var(--bg);
     z-index: 1000;
 
     text-align: center;
