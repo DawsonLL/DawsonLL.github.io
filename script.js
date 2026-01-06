@@ -73,5 +73,7 @@ updateTime = () => {
     const now = new Date();
     const timeElement = document.getElementById("current-time");
 
-    timeElement.innerHTML = now.toLocaleTimeString();
+    timeElement.innerHTML = now.toLocaleTimeString("en-US", {
+        timeZone: "America/Los_Angeles"
+    });
 }
