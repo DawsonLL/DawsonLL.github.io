@@ -496,11 +496,16 @@ article p {
     text-align: justify; 
 } 
 
+.post-meta { 
+    font-size: 14px; 
+    color: var(--text); 
+    margin-bottom: 10px; 
+}
 
 article { 
     margin-bottom: 20px; 
     padding: 10px 20px; 
-    border: 1px solid rgb(145, 145, 145); 
+    border-bottom: 1px solid rgb(145, 145, 145); 
     width: 100%
 } 
 
