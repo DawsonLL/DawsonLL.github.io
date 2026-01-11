@@ -480,10 +480,6 @@ p.copyright {
     margin: 0;
 }
 
-
-
-
-
 .blog { 
     display: flex; 
     justify-content: space-between; 
@@ -500,6 +496,13 @@ article p {
     font-size: 14px; 
     color: var(--text); 
     margin-bottom: 10px; 
+}
+
+.post-content {
+    text-indent: 40px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text);
 }
 
 article { 
