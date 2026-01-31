@@ -406,6 +406,43 @@ table {
     flex-wrap: wrap;
 }
 
+table td {
+    padding-bottom: 5%;
+}
+
+.skills-table {
+    border-spacing: 10px 5px;
+    border-collapse: separate;
+}
+
+.skills-table td {
+    padding: 0px;
+}
+
+.skill-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 25px;
+    padding: 3px;
+}
+
+.skill-bar {
+    width: 0%;
+    height: 15px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    transition: width 0.5s ease-in-out;
+
+    background-color: #04aa6D;
+    background-image: linear-gradient(
+        90deg,
+        transparent 90%,
+        rgba(0,0,0,0.2) 90%
+    );
+    background-size: 30px 100%
+}
 
 p.copyright {
     position: fixed;
